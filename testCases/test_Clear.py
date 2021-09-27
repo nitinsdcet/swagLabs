@@ -1,8 +1,10 @@
 import pytest
+from selenium.common.exceptions import NoSuchElementException
 
 from pageObjects.LoginPage import Login
 from pageObjects.shoppingPage import shopping
 from utilities.readProperties import ReadConfig
+from pageObjects.clearPage import clear
 
 
 class Test_oo4_Clear:
@@ -25,5 +27,12 @@ class Test_oo4_Clear:
             assert True
         else:
             assert False
-
-
+        self.cls = clear(self.driver)
+        self.cls.clickRemove()
+        try:
+            item = self.driver.find_element_by_xpath("//div[@class='cart_quantity']")
+            s = item.text
+            if s == 1:
+                print("Item not removed and item added:" + s)
+        except NoSuchElementException:
+            print("Item removed")
