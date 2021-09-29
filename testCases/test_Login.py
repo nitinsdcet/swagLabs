@@ -1,12 +1,12 @@
-# import allure
+import allure
 import pytest
-# from allure_commons.types import AttachmentType
+from allure_commons.types import AttachmentType
 
 from pageObjects.LoginPage import Login
 from utilities.readProperties import ReadConfig
 
 
-# allure.severity(allure.severity_level.NORMAL)
+allure.severity(allure.severity_level.NORMAL)
 
 
 class Test_001_Login:
@@ -31,7 +31,7 @@ class Test_001_Login:
             self.driver.close()
             assert False
 
-    # allure.severity(allure.severity_level.CRITICAL)
+    allure.severity(allure.severity_level.CRITICAL)
 
     # @pytest.mark.regression
     @pytest.mark.sanity
