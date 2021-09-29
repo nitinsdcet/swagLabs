@@ -50,7 +50,7 @@ class Test_001_Login:
             self.driver.save_screenshot(".\\Screenshots\\"+"test_login.png")
             print(act_title)
             self.driver.close()
-            print("close brows")
+            print("close brow")
             assert False
 
 
