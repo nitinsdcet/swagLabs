@@ -1,12 +1,12 @@
-# import allure
+import allure
 import pytest
-# from allure_commons.types import AttachmentType
+from allure_commons.types import AttachmentType
 
 from pageObjects.LoginPage import Login
 from utilities.readProperties import ReadConfig
 
 
-# allure.severity(allure.severity_level.NORMAL)
+allure.severity(allure.severity_level.NORMAL)
 
 
 class Test_001_Login:
@@ -14,9 +14,9 @@ class Test_001_Login:
     userEmail = ReadConfig.getUserEmail()
     password = ReadConfig.getPassword()
 
- #   allure.severity(allure.severity_level.MINOR)
+    allure.severity(allure.severity_level.MINOR)
 
-    @pytest.mark.regression
+    # @pytest.mark.regression
     def testHomePageTitle(self, setup):
         self.driver = setup
         self.driver.get(self.baseURL)
@@ -33,7 +33,7 @@ class Test_001_Login:
 
     # allure.severity(allure.severity_level.CRITICAL)
 
-    @pytest.mark.regression
+    # @pytest.mark.regression
     @pytest.mark.sanity
     def test_login(self, setup):
         self.driver = setup
